@@ -1,5 +1,6 @@
 const db = require('../dbinit');
-const Campus = require('./Restaurant');
+const Restaurant = require('./Restaurant');
+
 
 db.sequelize.sync({force: false});
 
