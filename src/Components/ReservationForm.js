@@ -62,7 +62,7 @@ class ReservationForm extends Component{
 
     //Called when the user submits the form (with button)
     onSubmit = () =>{  
-        //Creates new campus with the information given to be sent to database
+        //Creates new reservation with the information given to be sent to database
         const newReservation = {
             name: this.state.name,
             numberOfPeople: this.state.numberOfPeople,
@@ -115,7 +115,7 @@ class ReservationForm extends Component{
 
                     <input type="text" onChange = {this.updateNotes} placeholder = "Anything else we should know? (Write N/A if not)" required/>
                     <br/>
-                    
+
                     <button type="submit">Submit</button>
                 </form>
             </div>
