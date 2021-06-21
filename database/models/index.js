@@ -1,15 +1,10 @@
 const db = require('../dbinit');
-const Campus = require('./Campus');
-const Student = require('./Student')
+const Campus = require('./Restaurant');
 
 db.sequelize.sync({force: false});
 
-Campus.hasMany(Student);
-Student.belongsTo(Campus)
-
 module.exports = {
 
-    Campus,
-    Student,
+    Restaurant
     
 }
