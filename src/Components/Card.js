@@ -7,8 +7,8 @@ function ReservationCard(props){
         <div className="reservationCard">
             <div className="resCardFeature">
                 <div className="nameAndSchedule">
-                    <h3 className="cardName">Name: {props.reservation.name}</h3>
-                    <p>Scheduled For: {props.reservation.date}, {props.reservation.time}</p>
+                    <h3 className = "cardName">Name: {props.reservation.name}</h3>
+                    <p className = "cardDateandTime">Scheduled For: {props.reservation.date}, {props.reservation.time}</p>
                 </div>
             </div>
 
