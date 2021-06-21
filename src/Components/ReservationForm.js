@@ -103,11 +103,11 @@ class ReservationForm extends Component{
        console.log(newReservation)
     }
     
-    
+
     render(){
         return (
             <div className="reservationForm">
-                <h1 className="reservationTitle">New Reservation</h1>
+                <h1 className="reservationTitle">Make A Reservation</h1>
                 <p>
                     Thank you for choosing to reserve a table at our restaurant! We promise to make you feel welcome and at home :)
                     Please fill out the information below, and we'll reserve a spot for you at one of our tables!

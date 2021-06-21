@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-//import { BrowserRouter, Route, Link, Switch} from 'react-router-dom';
+import { BrowserRouter, Route, Link, Switch} from 'react-router-dom';
 import axios from 'axios';
 import ReservationCard from './Card';
 import ReservationForm from './ReservationForm';
@@ -53,6 +53,7 @@ class AllReservations extends Component{
         return(
             <div>
                 <h1>Reservations</h1>
+                <Link to="/new-reservation">+ Add A Reservation</Link>
                 <p>{this.state.prompt}</p>
                 <ReservationCard reservation = {this.state.reservationData}/>
             </div>
