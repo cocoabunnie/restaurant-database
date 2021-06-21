@@ -51,9 +51,9 @@ class AllReservations extends Component{
   render(){
       //Display all students from database
         return(
-            <div>
+            <div className="allReservationPage">
                 <h1>Reservations</h1>
-                <Link to="/new-reservation">+ Add A Reservation</Link>
+                <Link to="/new-reservation" class="newReservationButton">+</Link>
                 <p>{this.state.prompt}</p>
                 <ReservationCard reservation = {this.state.reservationData}/>
             </div>
