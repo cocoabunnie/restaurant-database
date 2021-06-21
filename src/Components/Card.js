@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import ReactDOM from 'react-dom';
 
-//Each Campus displayed on the All Campus page are displayed using one of these CampusCard components
+//Each Reservation will be displayed in one of these cards on the "See Reservations" Page
 function ReservationCard(props){
     return (
         <div className="reservationCard">
