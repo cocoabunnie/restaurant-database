@@ -39,9 +39,11 @@ router.get('/:id', (req, res, next) => {
 router.post('/', (req, res, next) => {
     models.Restaurant.create({
         name: req.body.name,
-        address: req.body.address,
-        description: req.body.description,
-        imgUrl: req.body.ImgUrl
+        numberOfPeople: req.body.numberOfPeople,
+        date: req.body.date,
+        time: req.body.time,
+        allergies: req.body.allergies,
+        notes: req.body.notes,
     })
     .then(restaurant => {
         res.status(201)
