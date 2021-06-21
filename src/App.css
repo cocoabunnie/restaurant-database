@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+.reservationCard{
+  display: grid;
+  margin: 20px;
+}
+
+.reservationCardInfo{
+  grid-row: 1;
+  grid-column: 1;
+  text-align: left;
+  border: 2px black solid;
+  width: 800px;
+}
+
+.deleteButton{
+  grid-row: 1;
+  grid-column: 1;
+  text-align: left;
+}

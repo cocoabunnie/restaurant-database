@@ -5,15 +5,14 @@ import ReactDOM from 'react-dom';
 function ReservationCard(props){
     return (
         <div className="reservationCard">
-            <div className="reservationName">
-                <h3>Name: {props.reservation.name}</h3>
-            </div>
-
-            <div className="reservationInfo">
+            <div className="reservationCardInfo">
+                <h3 className="cardName">Name: {props.reservation.name}</h3>
                 <p>Scheduled For: {props.reservation.date}, {props.reservation.time}</p>
             </div>
 
-            <button>Delete</button>
+            <div className="deleteButton">
+                <button>Delete</button>
+            </div>
         </div>
         
     )

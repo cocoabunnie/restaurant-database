@@ -8,7 +8,7 @@ import AllReservations from './Components/SeeAllReservations';
 function App() {
   return (
     <div className="App">
-      <AllReservations/>
+      <ReservationForm/>
     </div>
   );
 }
