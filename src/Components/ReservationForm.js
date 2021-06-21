@@ -12,6 +12,10 @@ class ReservationForm extends Component{
         notes:''
     }
 
+    componentDidUpdate(){
+        
+    }
+
     //Uses name in the form to update name state
     updateName = (event) =>{
         event.preventDefault();
@@ -39,9 +43,14 @@ class ReservationForm extends Component{
     //Uses time in form to update time state
     updateTime = (event) =>{
         event.preventDefault();
+        let hour = document.getElementById("hourInput").value;
+        let minute = document.getElementById("minuteInput").value;
+        let ampm = document.getElementById("ampmInput").value
+        let timeInput = hour + ":" + minute + ampm;
+
         this.setState({
-            time: event.target.value
-        });
+            time: timeInput
+        })
     }
 
     //Uses allergies in form to update allergies state
@@ -72,7 +81,22 @@ class ReservationForm extends Component{
             notes: this.state.notes
         }
 
-       this.addReservation(newReservation);
+       //this.addReservation(newReservation);
+    }
+
+    testSubmit = (event) =>{
+        event.preventDefault();
+
+        const newReservation = {
+            name: this.state.name,
+            numberOfPeople: this.state.numberOfPeople,
+            date: this.state.date,
+            time: this.state.time,
+            allergies: this.state.allergies,
+            notes: this.state.notes
+        }
+        
+        console.log(newReservation);
     }
     
     //Send info to database
@@ -94,8 +118,8 @@ class ReservationForm extends Component{
     
     render(){
         return (
-            <div>
-                <form onSubmit = {this.onSubmit}>
+            <div className="reservationForm">
+                <form onSubmit = {this.testSubmit}>
                     <p>New Reservation</p>
 
                     <input type="text" onChange = {this.updateName} placeholder = "Name" required/>
@@ -107,8 +131,43 @@ class ReservationForm extends Component{
                     <input type="text" onChange = {this.updateDate} placeholder = "Date" required/>
                     <br/>
 
-                    <input type="text" onChange = {this.updateTime} placeholder = "Time" required/>
-                    <br/>
+                    <div className="timeSelecter">
+                        <div className="timeTool">
+                            <select onChange={this.updateTime} id="hourInput" required>
+                                <option value="">HH</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                        </div>
+                        <div className="timeTool">
+                            <p>:</p>
+                        </div>
+                        <div className="timeTool">
+                            <select onChange={this.updateTime} id="minuteInput" required>
+                                <option value="">MM</option>
+                                <option value="00">00</option>
+                                <option value="15">15</option>
+                                <option value="30">30</option>
+                                <option value="45">45</option>
+                            </select>
+                        </div>
+                        <div onChange={this.updateTime} className="timeTool" required>
+                            <select id="ampmInput">
+                                <option value="am">am</option>
+                                <option value="pm">pm</option>
+                            </select>
+                        </div>
+                    </div>
 
                     <input type="text" onChange = {this.updateAllergies} placeholder = "Any Allergies?" required/>
                     <br/>
