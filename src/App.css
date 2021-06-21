@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -58,10 +54,48 @@
 
 /*FORM*/
 .reservationForm{
-  border: 2px black solid;
-  
+  margin: 30px;
+  background-color: rgb(221, 221, 221);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.reservationForm form{
+  padding: 10px;
+}
+
+.reservationForm p{
+  margin-left: 5px;
+}
+
+.reservationTitle{
+  background-color: rgb(195, 255, 172);
+  margin-top: 0px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 10px;
+}
+
+.reservationForm input{
+  font-size: 20px;
+  margin:5px;
+  width: 600px;
+}
+
+.reservationForm select{
+  font-size: 20px;
+  margin: 5px;
+}
+
+.reservationForm button{
+  margin: 5px;
+  font-size: 18px;
 }
 
 .timeTool{
   display:inline-block;
+}
+
+.dateTool{
+  display: inline-block;
 }
