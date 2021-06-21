@@ -3,12 +3,12 @@ const router = express.Router();
 const models = require('../database/models');
 
 router.get('/', (req, res, next) => {
-    models.Campus.findAll()
-    .then(campuses => {
+    models.Restaurant.findAll()
+    .then(restaurants => {
         res.status(200)
         .json({
             message: "Success!",
-            campuses
+            restaurants
         });
     }).catch(err => {
         res.status(500)
@@ -20,12 +20,12 @@ router.get('/', (req, res, next) => {
 })
 
 router.get('/:id', (req, res, next) => {
-    models.Campus.findByPk(req.params.id)
-    .then(campus => {
+    models.Restaurant.findByPk(req.params.id)
+    .then(restaurant => {
         res.status(200)
         .json({
             message: "Success!",
-            campus,
+            restaurant,
         });
     }).catch(err => {
         res.status(500)
@@ -37,17 +37,17 @@ router.get('/:id', (req, res, next) => {
 })
 
 router.post('/', (req, res, next) => {
-    models.Campus.create({
+    models.Restaurant.create({
         name: req.body.name,
         address: req.body.address,
         description: req.body.description,
         imgUrl: req.body.ImgUrl
     })
-    .then(campus => {
+    .then(restaurant => {
         res.status(201)
         .json({
             message: "Success",
-            campus
+            restaurant
         })
     })
     .catch(err => {
@@ -60,46 +60,46 @@ router.post('/', (req, res, next) => {
 })
 
 router.put('/:id', (req, res, next) => {
-    models.Campus.findByPk(req.params.id)
-    .then(campus => {
-        campus.update({
+    models.Restaurant.findByPk(req.params.id)
+    .then(restaurant => {
+        restaurant.update({
             name: req.body.name,
             gpa: req.body.gpa
         });
 
-        campus.save();
+        restaurant.save();
 
         res.status(200)
         .json({
-            message: "Successfully updated campus",
-            campus
+            message: "Successfully updated restaurant",
+            restaurant
         })
     })
     .catch(err => {
         res.status(500)
         .json({
-            message: "Cant update campus",
+            message: "Cant update restaurant",
             err
         })
     })
 })
 
 router.delete('/:id', (req, res, next) => {
-    models.Campus.findByPk(req.params.id)
-    .then(campus => {
-        campus.destroy();
+    models.Restaurant.findByPk(req.params.id)
+    .then(restaurant => {
+        restaurant.destroy();
 
         res.status(200)
         .json({
-            message: "Successfully updated campus",
-            campus
+            message: "Successfully updated restaurant",
+            restaurant
         })
     })
     .catch(err => {
         res.status(500)
         console.log(err)
         .json({
-            message: "Cant destroy campus",
+            message: "Cant deelete restaurant",
             err
         })
     })

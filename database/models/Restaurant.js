@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const db = require('../dbinit');
 
-const Campus = db.sequelize.define('campus', {
+const Restaurant = db.sequelize.define('restaurant', {
 
     name: {
 
@@ -14,8 +14,8 @@ const Campus = db.sequelize.define('campus', {
         }
 
     },
-    
-    address: {
+
+    date: {
 
         type: Sequelize.STRING,
         allowNull: false,
@@ -27,7 +27,38 @@ const Campus = db.sequelize.define('campus', {
 
     },
 
-    description: {
+    time: {
+
+        type: Sequelize.STRING,
+        allowNull: false,
+        validate: {
+
+            notEmpty: true,
+
+        }
+
+    },
+
+    numberOfPeople: {
+
+        type: Sequelize.STRING,
+        allowNull: false,
+        validate: {
+
+            notEmpty: true,
+
+        }
+
+    },
+
+    allergies: {
+
+        type: Sequelize.TEXT,
+        allowNull: false
+
+    },
+
+    notes: {
 
         type: Sequelize.TEXT,
         allowNull: false
@@ -36,4 +67,4 @@ const Campus = db.sequelize.define('campus', {
 
 })
 
-module.exports = Campus;
+module.exports = Restaurant;
