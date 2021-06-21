@@ -9,12 +9,8 @@ function ReservationCard(props){
                 <h3>Name: {props.reservation.name}</h3>
             </div>
 
-            <div className="reservationDate">
-                <p>Scheduled For: {props.reservation.date} + ", " + {props.reservation.time}</p>
-            </div>
-
-            <div className="reservationTime">
-                <p>Students Enrolled: {props.reservation.time}</p>
+            <div className="reservationInfo">
+                <p>Scheduled For: {props.reservation.date}, {props.reservation.time}</p>
             </div>
 
             <button>Delete</button>
