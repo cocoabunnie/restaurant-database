@@ -52,7 +52,7 @@ class AllReservations extends Component{
                 <p className="noReservationsMessage">{this.state.prompt}</p>
                 {displayReservations}
 
-                <Link to="/new-reservation" class="newReservationButton">+</Link>
+                
             </div>
         );
     }
