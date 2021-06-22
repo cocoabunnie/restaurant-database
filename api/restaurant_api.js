@@ -4,36 +4,36 @@ const models = require('../database/models');
 
 router.get('/', (req, res, next) => {
     models.Restaurant.findAll()
-    .then(restaurants => {
-        res.status(200)
-        .json({
-            message: "Success!",
-            restaurants
-        });
-    }).catch(err => {
-        res.status(500)
-        .json({
-            message: "An error has occurred!",
-            err,
+        .then(restaurants => {
+            res.status(200)
+                .json({
+                    message: "Success!",
+                    restaurants
+                });
+        }).catch(err => {
+            res.status(500)
+                .json({
+                    message: "Error",
+                    err,
+                })
         })
-    })
 })
 
 router.get('/:id', (req, res, next) => {
     models.Restaurant.findByPk(req.params.id)
-    .then(restaurant => {
-        res.status(200)
-        .json({
-            message: "Success!",
-            restaurant,
-        });
-    }).catch(err => {
-        res.status(500)
-        .json({
-            message: "An error has occurred!",
-            err,
+        .then(restaurant => {
+            res.status(200)
+                .json({
+                    message: "Success!",
+                    restaurant,
+                });
+        }).catch(err => {
+            res.status(500)
+                .json({
+                    message: "Error",
+                    err,
+                })
         })
-    })
 })
 
 router.post('/', (req, res, next) => {
@@ -45,66 +45,66 @@ router.post('/', (req, res, next) => {
         allergies: req.body.allergies,
         notes: req.body.notes,
     })
-    .then(restaurant => {
-        res.status(201)
-        .json({
-            message: "Success",
-            restaurant
+        .then(restaurant => {
+            res.status(201)
+                .json({
+                    message: "Success",
+                    restaurant
+                })
         })
-    })
-    .catch(err => {
-        res.status(400)
-        .json({
-            message: "Error posting",
-            err,
+        .catch(err => {
+            res.status(400)
+                .json({
+                    message: "Error posting",
+                    err,
+                })
         })
-    })
 })
 
 router.put('/:id', (req, res, next) => {
     models.Restaurant.findByPk(req.params.id)
-    .then(restaurant => {
-        restaurant.update({
-            name: req.body.name,
-            gpa: req.body.gpa
-        });
+        .then(restaurant => {
+            restaurant.update({
+                name: req.body.name,
+                gpa: req.body.gpa
+            });
 
-        restaurant.save();
+            restaurant.save();
 
-        res.status(200)
-        .json({
-            message: "Successfully updated restaurant",
-            restaurant
+            res.status(200)
+                .json({
+                    message: "Successfully updated restaurant",
+                    restaurant
+                })
         })
-    })
-    .catch(err => {
-        res.status(500)
-        .json({
-            message: "Cant update restaurant",
-            err
+        .catch(err => {
+            res.status(500)
+                .json({
+                    message: "Can't update restaurant",
+                    err
+                })
         })
-    })
 })
 
 router.delete('/:id', (req, res, next) => {
     models.Restaurant.findByPk(req.params.id)
-    .then(restaurant => {
-        restaurant.destroy();
+        .then(restaurant => {
+            restaurant.destroy();
 
-        res.status(200)
-        .json({
-            message: "Successfully updated restaurant",
-            restaurant
+            res.status(200)
+                .json({
+                    message: "Successfully updated restaurant",
+                    restaurant
+                })
         })
-    })
-    .catch(err => {
-        res.status(500)
-        console.log(err)
-        .json({
-            message: "Cant deelete restaurant",
-            err
+        .catch(err => {
+            res.status(500)
+            console.log(err)
+                .json({
+                    message: "Can't deelete restaurant",
+                    err
+                })
         })
-    })
 })
 
 module.exports = router;
