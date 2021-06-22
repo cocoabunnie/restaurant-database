@@ -30,6 +30,7 @@ class AllReservations extends Component{
         }
     }
 
+    //getting data from the database
     getReservationData = () => {
         axios.get('http://localhost:4000/reservations')
         .then((response) => {
@@ -51,8 +52,7 @@ class AllReservations extends Component{
                 <h1>Reservations</h1>
                 <p className="noReservationsMessage">{this.state.prompt}</p>
                 {displayReservations}
-
-                
+                <Link className="newReservationButton" to="/new-reservation">+</Link>
             </div>
         );
     }
