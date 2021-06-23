@@ -13,6 +13,10 @@ function ReservationCard(props){
             </div>
 
             <div className="resCardFeature">
+                <button className="editButton">See More</button>
+            </div>
+
+            <div className="resCardFeature">
                 <button className="deleteButton">Delete</button>
             </div>
         </div>
