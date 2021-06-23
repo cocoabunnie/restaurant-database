@@ -38,6 +38,13 @@
   margin-top: 100px;
 }
 
+/*"SEE MORE" MODAL ON RESERVATION PAGE*/
+.detailModal{
+  position: fixed;
+  width: 500px;
+  height: 500px;
+}
+
 /*CARDS ON RESERVATION PAGE*/
 .reservationCard{
   margin: 40px;
