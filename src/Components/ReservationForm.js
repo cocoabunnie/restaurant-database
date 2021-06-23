@@ -81,7 +81,7 @@ class ReservationForm extends Component{
     //Send info to database function
     addReservation = async(newReservation) => {
         axios.post('http://localhost:4000/reservations', newReservation)
-        .then((response) => console.log(response.data))
+        .then((response) => console.log(response))
         .catch((error) => console.log(error))
 
         //Reset values to prepare for another input
@@ -109,7 +109,7 @@ class ReservationForm extends Component{
             notes: this.state.notes,
             email: this.state.email
         }
-       //this.addReservation(newReservation);
+       this.addReservation(newReservation);
        console.log(newReservation)
     }
     
