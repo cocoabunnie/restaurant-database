@@ -71,6 +71,9 @@ class ReservationForm extends Component{
 
     //Send info to database function
     addReservation = async(newReservation) => {
+
+        //console.log("asdasdasd something goin on here asdasd")
+
         axios.post('http://localhost:4000/reservations', newReservation)
         .then((response) => console.log(response.data))
         .catch((error) => console.log(error))
