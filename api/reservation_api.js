@@ -39,6 +39,7 @@ router.get('/:id', (req, res, next) => {
 router.post('/', (req, res, next) => {
     models.Reservation.create({
         name: req.body.name,
+        email: req.body.email,
         numberOfPeople: req.body.numberOfPeople,
         date: req.body.date,
         time: req.body.time,
