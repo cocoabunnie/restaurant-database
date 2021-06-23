@@ -1,0 +1,47 @@
+div.homepage{
+    text-align: center;
+
+}
+
+
+div.welcomeBanner {
+    background-color: brown;
+    padding: 10px;
+}
+
+
+.parallax {
+    /* The image used */
+    background-image: url("bqq.jpeg");
+    opacity: 0.8;
+  
+    /* Set a specific height */
+    min-height: 500px; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+ .menu{
+      background-color: tan;
+      padding: 10px;
+
+  }
+
+button{
+    background-color: tan;
+    padding: 12px 28px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+    font-size: 20px;
+
+}
+button:hover {
+    background-color: whitesmoke;
+
+}
