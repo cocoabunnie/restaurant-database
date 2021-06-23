@@ -10,7 +10,11 @@ class AllReservations extends Component{
       
       this.state = {
         //This is just filler for me to see the card work
-        reservationData: [{name:"Tyler", date: "Jan 4", time: "5:00pm"}],
+        reservationData: [
+            {name:"Tyler", date: "Jan 4", time: "5:00pm"}, 
+            {name:"Anna", date: "March 8", time: "8:30pm"},
+            {name:"Brittney", date: "Dec 12", time: "11:35am"},
+            {name:"Lucy", date: "Aug 28", time: "6:45pm"}],
         prompt:""
       }
   }
