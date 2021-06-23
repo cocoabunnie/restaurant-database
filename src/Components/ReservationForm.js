@@ -9,7 +9,8 @@ class ReservationForm extends Component{
         date:'',
         time:'',
         allergies:'',
-        notes:''
+        notes:'',
+        email: ''
     }
 
     //Uses name in the form to update name state
@@ -69,12 +70,20 @@ class ReservationForm extends Component{
         });
     }
 
+    //Uses email in form to update the email
+    updateEmail = (event) =>{
+        event.preventDefault();
+        this.setState({
+            email: event.target.value
+        });
+    }
+
     //Send info to database function
     addReservation = async(newReservation) => {
         axios.post('http://localhost:4000/reservations', newReservation)
-        .then((response) => console.log(response.data))
+        .then((response) => console.log(response))
         .catch((error) => console.log(error))
- 
+
         //Reset values to prepare for another input
         {this.setState({
              name: '',
@@ -82,7 +91,8 @@ class ReservationForm extends Component{
              date:'',
              time:'',
              allergies:'',
-             notes:''
+             notes:'',
+             email: ''
         })}
      }
 
@@ -96,14 +106,13 @@ class ReservationForm extends Component{
             date: this.state.date,
             time: this.state.time,
             allergies: this.state.allergies,
-            notes: this.state.notes
+            notes: this.state.notes,
+            email: this.state.email
         }
-
        this.addReservation(newReservation);
        console.log(newReservation)
     }
     
-
     render(){
         return (
             <div className="reservationForm">
@@ -115,6 +124,9 @@ class ReservationForm extends Component{
 
                 <form onSubmit = {this.onSubmit}>
                     <input type="text" onChange = {this.updateName} placeholder = "Name" required/>
+                    <br/>
+
+                    <input type="email" onChange = {this.updateEmail} placeholder = "Your Email" required/>
                     <br/>
 
                     <input type="text" onChange = {this.updateNumPeople} placeholder = "Number of People Attending" required/>

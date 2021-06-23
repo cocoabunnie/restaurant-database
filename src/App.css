@@ -38,6 +38,13 @@
   margin-top: 100px;
 }
 
+/*"SEE MORE" MODAL ON RESERVATION PAGE*/
+.detailModal{
+  position: fixed;
+  width: 500px;
+  height: 500px;
+}
+
 /*CARDS ON RESERVATION PAGE*/
 .reservationCard{
   margin: 40px;
@@ -76,6 +83,19 @@
 
 .deleteButton:hover{
   background-color: rgb(192, 83, 83);
+}
+
+.editButton{
+  height: 103.433px;
+  width: 80px;
+  border: 2px black solid;
+  border-left: 0px;
+  border-right: 0px;
+  background-color: rgb(104, 119, 255);
+}
+
+.editButton:hover{
+  background-color: rgb(80, 92, 197);
 }
 
 /*FORM*/
