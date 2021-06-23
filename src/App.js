@@ -11,9 +11,12 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Link to="/">Home</Link>
-        <Link to="/all-reservations">Reservations</Link>
 
+      <div className="navigationMenu">
+        <Link to="/" className="navigationItems">Home</Link>
+        <Link to="/all-reservations" className="navigationItems">Reservations</Link>
+      </div>
+        
         <Switch>
           <Route exact path="/">
             <Homepage />

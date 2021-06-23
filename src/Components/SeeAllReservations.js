@@ -1,26 +1,23 @@
 import React, {Component} from 'react';
-import { BrowserRouter, Route, Link, Switch} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 import ReservationCard from './Card';
-import ReservationForm from './ReservationForm';
 
 class AllReservations extends Component{
   constructor(props){
       super(props);
       
       this.state = {
-        //This is just filler for me to see the card work
         reservationData: [],
         prompt:""
       }
   }
 
     componentDidMount(){
-        //Get reservations from database when page loads
         this.getReservationData();
     }
 
-    //getting data from the database
+    //get data from database
     getReservationData = () => {
         axios.get('http://localhost:4000/reservations')
         .then((response) => {
@@ -42,7 +39,6 @@ class AllReservations extends Component{
     }
 
   render(){
-      //Display reservations
       const displayReservations = this.state.reservationData.map(data => <ReservationCard reservation={data}/>)
       console.log(this.state.reservationData.length);
         return(

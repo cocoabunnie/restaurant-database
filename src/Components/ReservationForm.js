@@ -13,7 +13,6 @@ class ReservationForm extends Component{
         email: ''
     }
 
-    //Uses name in the form to update name state
     updateName = (event) =>{
         event.preventDefault();
         this.setState({
@@ -21,7 +20,6 @@ class ReservationForm extends Component{
         });
     }
     
-    //Uses number of people input in form to update num people state
     updateNumPeople = (event) =>{
         event.preventDefault();
         this.setState({
@@ -29,7 +27,6 @@ class ReservationForm extends Component{
         });
     }
 
-    //Uses date in form to update date state
     updateDate = (event) =>{
         event.preventDefault();
         let month = document.getElementById("monthInput").value;
@@ -41,7 +38,6 @@ class ReservationForm extends Component{
         })
     }
 
-    //Uses time in form to update time state
     updateTime = (event) =>{
         event.preventDefault();
         let hour = document.getElementById("hourInput").value;
@@ -54,7 +50,6 @@ class ReservationForm extends Component{
         })
     }
 
-    //Uses allergies in form to update allergies state
     updateAllergies = (event) =>{
         event.preventDefault();
         this.setState({
@@ -62,7 +57,6 @@ class ReservationForm extends Component{
         });
     }
 
-    //Uses notes in form to update notes state
     updateNotes = (event) =>{
         event.preventDefault();
         this.setState({
@@ -70,7 +64,6 @@ class ReservationForm extends Component{
         });
     }
 
-    //Uses email in form to update the email
     updateEmail = (event) =>{
         event.preventDefault();
         this.setState({
@@ -78,12 +71,12 @@ class ReservationForm extends Component{
         });
     }
 
-    //Send info to database function
+    //Send info to database
     addReservation = async(newReservation) => {
         axios.post('http://localhost:4000/reservations', newReservation)
         .then((response) => {
-            console.log(response)
-            window.location.replace("/all-reservations")
+            console.log(response);
+            window.location.replace("/all-reservations");
         })
         .catch((error) => console.log(error))
 
@@ -99,7 +92,6 @@ class ReservationForm extends Component{
         })}
      }
 
-    //Called when the user submits the form (with button)
     onSubmit = (event) =>{  
         event.preventDefault();
         //Creates new reservation with the information given to be sent to database
@@ -120,9 +112,10 @@ class ReservationForm extends Component{
     render(){
         return (
             <div className="reservationForm">
+                
                 <h1 className="reservationTitle">Make A Reservation</h1>
                 <p>
-                    Thank you for choosing to reserve a table at our restaurant! We promise to make you feel welcome and at home :)
+                    Thank you for choosing to reserve a table at Miss Korea! We promise to make you feel welcome and at home :)
                     Please fill out the information below, and we'll reserve a spot for you at one of our tables!
                 </p>
 

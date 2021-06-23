@@ -1,3 +1,23 @@
+/*NAVIGATION*/
+.navigationMenu{
+  background-color:brown;
+  text-align: center;
+  padding: 20px;
+}
+
+.navigationItems{
+  color:black;
+  padding: 10px;
+  text-decoration: none;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.navigationItems:hover{
+  background-color: black;
+  color: white;
+}
+
 /*RESERVATION PAGE*/
 .allReservationPage h1{
   text-align: center;
@@ -7,8 +27,8 @@
 
 .newReservationButton{
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  right: 5%;
+  bottom: 5%;
   text-decoration: none;
   text-align: center;
   font-size: 40px;
@@ -115,7 +135,7 @@
 }
 
 .reservationTitle{
-  background-color: rgb(195, 255, 172);
+  background-color: rgb(110, 179, 84);
   margin-top: 0px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
