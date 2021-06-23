@@ -43,8 +43,6 @@ class AllReservations extends Component{
             })
         })
         .catch((error) => console.log(error));
-
-        console.log("Your reservations: \n" + this.state.studentData)
     }
 
   render(){
