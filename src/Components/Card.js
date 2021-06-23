@@ -1,11 +1,16 @@
 import React, { Component } from "react"
 import ReactDOM from 'react-dom';
 import axios from "axios";
+import { Modal } from "@material-ui/core";
 
 //Each Reservation will be displayed in one of these cards on the "See Reservations" Page
 class ReservationCard extends React.Component{
     constructor(props){
         super(props);
+
+        this.state = {
+            showDetails: false
+        }
     }
 
     deleteReservation = () => {
@@ -40,12 +45,24 @@ class ReservationCard extends React.Component{
                 </div>
     
                 <div className="resCardFeature">
-                    <button className="editButton">See More</button>
+                    <button className="editButton" onClick={() => this.setState({showDetails: true})}>See More</button>
                 </div>
     
                 <div className="resCardFeature">
                     <button className="deleteButton" onClick={this.deleteReservation}>Delete</button>
                 </div>
+
+                <Modal className="detailModal" open = {this.state.showDetails}>
+                    <div>
+                        <h1>Name: {this.props.reservation.name}</h1>
+                        <p>Date of Reservation: {this.props.reservation.date}</p>
+                        <p>Time of Reservation: {this.props.reservation.time}</p>
+                        <p>Number of People: {this.props.reservation.numberOfPeople}</p>
+                        <p>Allergies: {this.props.reservation.allergies}</p>
+                        <p>Email: {this.props.reservation.email}</p>
+                        <p>Extra Notes: {this.props.reservation.notes}</p>
+                    </div>
+                </Modal>
             </div>
             
         )

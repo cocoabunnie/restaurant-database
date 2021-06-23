@@ -109,7 +109,7 @@ class ReservationForm extends Component{
             notes: this.state.notes,
             email: this.state.email
         }
-       //this.addReservation(newReservation);
+       this.addReservation(newReservation);
        console.log(newReservation)
     }
     
