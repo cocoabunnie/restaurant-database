@@ -36,7 +36,7 @@ class ReservationCard extends React.Component{
         //Refreshing should repopulate the array with the updated data
         axios.delete('http://localhost:4000/reservations/' + this.props.reservation.id )
         .then(
-            //window.location.reload()
+            window.location.reload()
         )
     }
 
