@@ -1,5 +1,5 @@
 const db = require('../dbinit');
-const Restaurant = require('./Restaurant');
+const Reservation = require('./Reservation');
 
 
 db.sequelize.sync({force: false});
@@ -7,6 +7,6 @@ db.sequelize.sync({force: false});
 
 module.exports = {
 
-    Restaurant
+    Reservation
     
 }
