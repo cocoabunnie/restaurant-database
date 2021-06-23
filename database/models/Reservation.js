@@ -15,6 +15,18 @@ const Reservation = db.sequelize.define('reservation', {
 
     },
 
+    email: {
+
+        type: Sequelize.STRING,
+        allowNull: false,
+        validate: {
+
+            notEmpty: true,
+
+        }
+
+    },
+
     numberOfPeople: {
 
         type: Sequelize.STRING,
