@@ -31,7 +31,7 @@ div.welcomeBanner {
 
   }
 
-button{
+.makeResButton{
     background-color: tan;
     padding: 12px 28px;
     position: absolute;
@@ -41,7 +41,7 @@ button{
     font-size: 20px;
 
 }
-button:hover {
+.makeResButton:hover {
     background-color: whitesmoke;
 
 }

@@ -20,7 +20,7 @@ class Homepage extends Component{
                 <h1>Welcome To Miss Korea </h1>
                 </div>
                 <div className = "parallax">
-                    <Link to= "/new-reservation" className= "newResButton"> Make a Reservation</Link>
+                    <Link to= "/new-reservation" className= "makeResButton"> Make a Reservation</Link>
                     {/* <button> Make a Reservation</button> */}
                     {/* <img src ={foodImage} />  */}
                 </div>
