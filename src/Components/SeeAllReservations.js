@@ -17,17 +17,7 @@ class AllReservations extends Component{
 
     componentDidMount(){
         //Get reservations from database when page loads
-        this.getReservationData()
-
-        if (this.state.reservationData.length == 0){
-            this.setState({
-                prompt: "You have no reservations scheduled..."
-            });
-        } else {
-            this.setState({
-                prompt: ""
-            });
-        }
+        this.getReservationData();
     }
 
     //getting data from the database
@@ -37,6 +27,16 @@ class AllReservations extends Component{
             this.setState({
                 reservationData: response.data.reservations
             })
+
+            if (response.data.reservations.length == 0){
+                this.setState({
+                    prompt: "You have no reservations scheduled..."
+                });
+            } else {
+                this.setState({
+                    prompt: ""
+                });
+            }
         })
         .catch((error) => console.log(error));
     }
