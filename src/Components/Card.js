@@ -26,8 +26,8 @@ class ReservationCard extends React.Component{
             date: this.props.reservation.date,
             time: this.props.reservation.time,
             allergies: this.props.reservation.allergies,
-            notes: this.props.reservation.notes,
-            email: this.props.reservation.email
+            email: this.props.reservation.email,
+            notes: this.props.reservation.notes
         }
 
         console.log("This email: " + this.props.reservation.email)
@@ -67,7 +67,6 @@ class ReservationCard extends React.Component{
                             <p>Time of Reservation: {this.props.reservation.time}</p>
                             <p>Number of People: {this.props.reservation.numberOfPeople}</p>
                             <p>Allergies: {this.props.reservation.allergies}</p>
-                            <p>Email: {this.props.reservation.email}</p>
                             <p>Extra Notes: {this.props.reservation.notes}</p>
                         </DialogContentText>
                     </DialogContent>

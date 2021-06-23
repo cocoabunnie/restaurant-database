@@ -110,7 +110,7 @@ class ReservationForm extends Component{
             email: this.state.email
         }
        this.addReservation(newReservation);
-       console.log(newReservation)
+       console.log(this.state.email);
     }
     
     render(){
