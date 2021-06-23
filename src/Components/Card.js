@@ -45,7 +45,7 @@ class ReservationCard extends React.Component{
             <div className="reservationCard">
                 <div className="resCardFeature">
                     <div className="nameAndSchedule">
-                        <h3 className = "cardName">Name: {this.props.reservation.email}</h3>
+                        <h3 className = "cardName">Name: {this.props.reservation.name}</h3>
                         <p className = "cardDateandTime">Scheduled For: {this.props.reservation.date}, {this.props.reservation.time}</p>
                     </div>
                 </div>
