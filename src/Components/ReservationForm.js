@@ -81,7 +81,10 @@ class ReservationForm extends Component{
     //Send info to database function
     addReservation = async(newReservation) => {
         axios.post('http://localhost:4000/reservations', newReservation)
-        .then((response) => console.log(response))
+        .then((response) => {
+            console.log(response)
+            window.location.replace("/all-reservations")
+        })
         .catch((error) => console.log(error))
 
         //Reset values to prepare for another input
@@ -109,8 +112,9 @@ class ReservationForm extends Component{
             notes: this.state.notes,
             email: this.state.email
         }
+
+        //Add to database
        this.addReservation(newReservation);
-       console.log(this.state.email);
     }
     
     render(){
