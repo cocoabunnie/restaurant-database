@@ -4,11 +4,11 @@ const models = require('../database/models');
 
 router.get('/', (req, res, next) => {
     models.Reservation.findAll()
-        .then(reservastions => {
+        .then(reservations => {
             res.status(200)
                 .json({
                     message: "Success!",
-                    reservastions
+                    reservations
                 });
         }).catch(err => {
             res.status(500)
