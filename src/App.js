@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Link, Switch} from 'react-router-dom';
 import ReservationForm from './Components/ReservationForm';
 import AllReservations from './Components/SeeAllReservations';
 import Homepage from './Components/Home';
+import ReservationDetails from './Components/ReservationDetails';
 
 function App() {
   return (
@@ -26,6 +27,11 @@ function App() {
           <Route path="/new-reservation">
             <ReservationForm />
           </Route>
+
+          <Route path="/reservation-details">
+            <ReservationDetails />
+          </Route>
+
         </Switch>
       </BrowserRouter>
     </div>

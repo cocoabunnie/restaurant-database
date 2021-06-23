@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-router.use('/restaurants', require('./restaurant_api'));
+router.use('/reservations', require('./reservation_api'));
 
 module.exports = router;

@@ -35,12 +35,10 @@ class AllReservations extends Component{
         axios.get('http://localhost:4000/reservations')
         .then((response) => {
             this.setState({
-                reservationData: response
+                reservationData: response.data.reservations
             })
         })
         .catch((error) => console.log(error));
-
-        console.log("Your reservations: \n" + this.state.studentData)
     }
 
   render(){
