@@ -20,18 +20,6 @@ class ReservationCard extends React.Component{
     }
 
     deleteReservation = () => {
-        const reservationObject = {
-            name: this.props.reservation.name,
-            numberOfPeople: this.props.reservation.numberOfPeople,
-            date: this.props.reservation.date,
-            time: this.props.reservation.time,
-            allergies: this.props.reservation.allergies,
-            email: this.props.reservation.email,
-            notes: this.props.reservation.notes
-        }
-
-        console.log("This email: " + this.props.reservation.email)
-
         //Delete the item from the database and refresh the page!
         //Refreshing should repopulate the array with the updated data
         axios.delete('http://localhost:4000/reservations/' + this.props.reservation.id )
@@ -41,6 +29,8 @@ class ReservationCard extends React.Component{
     }
 
     render(){
+        console.log(this.props.reservation.email);
+        console.log(this.props.reservation.name);
         return (
             <div className="reservationCard">
                 <div className="resCardFeature">
@@ -67,6 +57,7 @@ class ReservationCard extends React.Component{
                             <p>Time of Reservation: {this.props.reservation.time}</p>
                             <p>Number of People: {this.props.reservation.numberOfPeople}</p>
                             <p>Allergies: {this.props.reservation.allergies}</p>
+                            <p>Email: {this.props.reservation.email}</p>
                             <p>Extra Notes: {this.props.reservation.notes}</p>
                         </DialogContentText>
                     </DialogContent>
