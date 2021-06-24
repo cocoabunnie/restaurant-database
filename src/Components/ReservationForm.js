@@ -1,6 +1,9 @@
 import React, { Component } from "react"
 import ReactDOM from 'react-dom';
+import emailjs from 'emailjs-com';
 const axios = require('axios');
+
+
 
 class ReservationForm extends Component{
     state = {
@@ -110,7 +113,17 @@ class ReservationForm extends Component{
             email: this.state.email
         }
        this.addReservation(newReservation);
-       console.log(newReservation)
+       console.log(newReservation);
+       
+       alert("you have made a reservation");   //  
+
+       emailjs.sendForm('service_0nb6yg5', 'template_04ev38q', event.target, 
+       'user_d1OJ5CU5VisX06Be5rNjQ')
+         .then((result) => {
+             console.log(result.text);
+         }, (error) => {
+             console.log(error.text);
+         });
     }
     
     render(){
@@ -123,18 +136,18 @@ class ReservationForm extends Component{
                 </p>
 
                 <form onSubmit = {this.onSubmit}>
-                    <input type="text" onChange = {this.updateName} placeholder = "Name" required/>
+                    <input type="text" onChange = {this.updateName} placeholder = "Name" name ="to_name" required/>
                     <br/>
 
-                    <input type="email" onChange = {this.updateEmail} placeholder = "Your Email" required/>
+                    <input type="email" onChange = {this.updateEmail} placeholder = "Your Email" name ="user_email" required/>
                     <br/>
 
-                    <input type="text" onChange = {this.updateNumPeople} placeholder = "Number of People Attending" required/>
+                    <input type="text" onChange = {this.updateNumPeople} placeholder = "Number of People Attending" name = "party_number" required/>
                     <br/>
 
                     <div className="dateSelector">
                         <div className="dateTool">
-                            <select onChange={this.updateDate} id="monthInput" required>
+                            <select onChange={this.updateDate} id="monthInput" name = "month" required>
                                 <option value="">Month</option>
                                 <option value="January">January</option>
                                 <option value="February">February</option>
@@ -151,7 +164,7 @@ class ReservationForm extends Component{
                             </select>
                         </div>
                         <div className="dateTool">
-                            <select onChange={this.updateDate} id="dayInput" required>
+                            <select onChange={this.updateDate} id="dayInput" name = "day" required>
                                 <option value="">Day</option>
                                 <option value="05">05</option>
                                 <option value="10">10</option>
@@ -164,7 +177,7 @@ class ReservationForm extends Component{
 
                     <div className="timeSelecter">
                         <div className="timeTool">
-                            <select onChange={this.updateTime} id="hourInput" required>
+                            <select onChange={this.updateTime} id="hourInput" name = "hour" required>
                                 <option value="">HH</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -184,7 +197,7 @@ class ReservationForm extends Component{
                             <p>:</p>
                         </div>
                         <div className="timeTool">
-                            <select onChange={this.updateTime} id="minuteInput" required>
+                            <select onChange={this.updateTime} id="minuteInput" name = "minute" required>
                                 <option value="">MM</option>
                                 <option value="00">00</option>
                                 <option value="15">15</option>
@@ -193,7 +206,7 @@ class ReservationForm extends Component{
                             </select>
                         </div>
                         <div onChange={this.updateTime} className="timeTool" required>
-                            <select id="ampmInput">
+                            <select id="ampmInput" name = "ampm">
                                 <option value="am">am</option>
                                 <option value="pm">pm</option>
                             </select>
