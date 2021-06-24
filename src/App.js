@@ -6,15 +6,17 @@ import { BrowserRouter, Route, Link, Switch} from 'react-router-dom';
 import ReservationForm from './Components/ReservationForm';
 import AllReservations from './Components/SeeAllReservations';
 import Homepage from './Components/Home';
-import ReservationDetails from './Components/ReservationDetails';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Link to="/">Home</Link>
-        <Link to="/all-reservations">Reservations</Link>
 
+      <div className="navigationMenu">
+        <Link to="/" className="navigationItems">Home</Link>
+        <Link to="/all-reservations" className="navigationItems">Reservations</Link>
+      </div>
+        
         <Switch>
           <Route exact path="/">
             <Homepage />
@@ -26,10 +28,6 @@ function App() {
 
           <Route path="/new-reservation">
             <ReservationForm />
-          </Route>
-
-          <Route path="/reservation-details">
-            <ReservationDetails />
           </Route>
 
         </Switch>
