@@ -17,7 +17,8 @@ class Homepage extends Component{
         return(
             <div className = "homepage" >
                 <div className = "welcomeBanner">
-                <h1>Welcome To Miss Korea </h1>
+                <h1>Welcome To Floreo Labs  </h1>
+                <p> open from 9am - 5pm everyday</p>
                 </div>
                 <div className = "parallax">
                     <Link to= "/new-reservation" className= "makeResButton"> Make a Reservation</Link>
